@@ -3,6 +3,7 @@ import aiohttp
 import chess
 import discord
 from dotenv import load_dotenv, dotenv_values, set_key
+from keep_alive import keep_alive
 
 
 
@@ -45,5 +46,5 @@ async def on_message(message):
         await message.channel.send("Login successful!")
         
     
-
+keep_alive()
 client.run(os.getenv('DISCORD_BOT_TOKEN'))
